@@ -6,13 +6,13 @@ public class AccuracyDoubleFloat {
         radius = 6371.2;
         final double Pi = 3.14;
         final double R = radius * radius * radius;
-        return 4 * Pi * R / 3;
+        return 4 / 3.0 * Pi * R;
     }
     public static float volumeBallFloat(float radius) { //возвращает объём шара с радиусом radius и основана на типе float
         radius = 6371.2F;
         float b = 3.14F;
         final float R = radius * radius * radius;
-        return (float) (4 * b * R / 3);
+        return (float) (4 / 3.0 * b * R);
     }
     public static double calculateAccuracy(double radius) { //возвращает разницу между функциями volumeBallDouble и volumeBallFloat (они должны быть вызваны из неё с параметром radius)
         radius = 6371.2;
@@ -21,7 +21,7 @@ public class AccuracyDoubleFloat {
         float b = (float) 3.14F;
         float temp = (float) 6371.2F;
         final float T = temp * temp * temp;
-        return 4 * Pi * R / 3 - (float) (4 * b * T / 3);
+        return 4 / 3.0 * Pi * R - (float) (4 / 3.0 * b * T);
     }
 
     public static void main(String[] args) {
