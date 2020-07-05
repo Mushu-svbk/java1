@@ -2,15 +2,15 @@ package ru.progwards.java1.lessons.compare_if_cycles;
 
 public class TriangleInfo {
 
-    public static boolean isTriangle(int a, int b, int c) { // возвращает true, если по данным трём сторонам (a, b, c) можно построить треугольник
+    public static boolean isTriangle(int a, int b, int c) { // возвращает true, если по данным трём сторонам (a, b, c) можно построить треугольник.
         return (a < b + c) & (b < a + c) & (c < a + b);
     }
 
-    public static boolean isRightTriangle(int a, int b, int c) { // возвращает true, если треугольник со сторонами a, b, c является прямоугольным
+    public static boolean isRightTriangle(int a, int b, int c) { // возвращает true, если треугольник со сторонами a, b, c является прямоугольным.
         return (a * a == b * b + c * c) | (b * b == a * a + c * c) | (c * c == a * a + b * b);
     }
 
-    public static boolean isIsoscelesTriangle(int a, int b, int c) { // возвращает true, если треугольник со сторонами a, b, c является равнобедренным
+    public static boolean isIsoscelesTriangle(int a, int b, int c) { // возвращает true, если треугольник со сторонами a, b, c является равнобедренным.
         return a == b | b == c | a == c;
     }
 
