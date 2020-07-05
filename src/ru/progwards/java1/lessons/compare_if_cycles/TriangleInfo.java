@@ -10,7 +10,7 @@ public class TriangleInfo {
         return (a * a == b * b + c * c) | (b * b == a * a + c * c) | (c * c == a * a + b * b);
     }
 
-    public static boolean isIsoscelesTriangle(int a, int b, int c) { // которая возвращает true, если треугольник со сторонами a, b, c является равнобедренным
+    public static boolean isIsoscelesTriangle(int a, int b, int c) { // возвращает true, если треугольник со сторонами a, b, c является равнобедренным
         return a == b | b == c | a == c;
     }
 
