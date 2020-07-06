@@ -33,9 +33,17 @@ public class CyclesGoldenFibo {
     }
 
     public static boolean isGoldenTriangle(int a, int b, int c) { // возвращает true, если треугольник со сторонами a, b, c является Золотым. Критерии - равнобедреннй и отношение ребра к основанию должно лежать между значениями 1.61703 и 1.61903
-        if ((((double) a == (double) b) & ((1.61703 < ((double) a / (double) c)) & (((double) a / (double) c) < 1.61903))) | (((double) b == (double) c) & ((1.61703 < ((double) b / (double) a)) & (((double) b / (double) a) < 1.61903))) | (((double) a == (double) c) & ((1.61703 < ((double) a / (double) b)) & (((double) a / (double) b) < 1.61903))))
-            return true;
+        final double OTN_MIN = 1.61703, OTN_MAX = 1.61903;
+        double osn, reb;
+        //  определить ребро и основание
+        if (a==b){reb = (double)a; osn = (double)c;}
+        else if (a==c){reb = (double)a; osn = (double)b;}
+        else if (c==b){reb = (double)c; osn = (double)a;}
         else return false;
+        if (reb/osn > OTN_MIN && reb/osn < OTN_MAX)
+            return true;
+        else
+            return false;
     }
     public static void main(String[] args) {
         System.out.println(containsDigit(5,5));
