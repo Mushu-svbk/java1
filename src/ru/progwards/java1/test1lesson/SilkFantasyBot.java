@@ -11,7 +11,9 @@ public class SilkFantasyBot extends ProgwardsTelegramBot {
         checkTags(text);
         if (foundCount() == 1) {
             if (checkLastFound("привет"))
-                return "Добро пожаловать в онлайн магазин азербайджанских шелковых келагаи - Silk Fantasy!\n Чем можем Вам помочь?" + menu;
+                return "Здравствуйте! Добро пожаловать в онлайн магазин азербайджанских шелковых келагаи - Silk Fantasy!\n Чем можем Вам помочь?" + menu;
+            if (checkLastFound("ассортимент"))
+                return "Весь ассортимент Вы можете посмотреть на нашем сайте https://silkfantasy.az/.\n Актуальный товар помечен меткой \"В наличии\"";
             if (checkLastFound("конец"))
                 return "Спасибо за заказ.";
             if (checkLastFound("дурак"))
@@ -39,7 +41,7 @@ public class SilkFantasyBot extends ProgwardsTelegramBot {
         bot.addTags("Шарф с кистями", "шарф, кист, бахром, шелк, 160х80, Баскал");
         bot.addTags("Дингя-косынка", "дингя, косынк, маленьк, детск, шелк, 80х80, Баскал");
 
-        bot.addTags("Торт тирамису", "десерт, кофе, маскарпоне, бисквит");
+        bot.addTags("ассортимент", "ассортимент, выбор, выбр, посмотреть, можно посмотреть, в наличии, есть");
         bot.addTags("Торт медовик", "десерт, мед, бисквит");
         bot.addTags("Эклеры", "десерт, заварной, крем, тесто");
 
