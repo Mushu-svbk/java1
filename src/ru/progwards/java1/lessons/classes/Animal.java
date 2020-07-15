@@ -3,55 +3,55 @@ package ru.progwards.java1.lessons.classes;
 public class Animal {
     double weight;
 
-    public Animal(double weight) {
+    public Animal(double weight) { // вес животного
         this.weight = weight;
     }
-    public double getWeight() {
+    public double getWeight() { //возвращает вес животного
         return this.weight;
     }
 
-    enum AnimalKind {
+    enum AnimalKind { // вид животного
         ANIMAL,
         COW,
         HAMSTER,
         DUCK
     }
 
-    public AnimalKind getKind() {
+    public AnimalKind getKind() { //возвращает вид животного
         return AnimalKind.ANIMAL;
     }
 
-    enum FoodKind {
+    enum FoodKind { // вид еды
         UNKNOWN,
         HAY,
         CORN
     }
 
-    public FoodKind getFoodKind() {
+    public FoodKind getFoodKind() { //возвращает вид еды
         return FoodKind.UNKNOWN;
     }
 
 
-    public String toString() {
+    public String toString() { //возвращает информацию о животном в формате: I am <AnimalKind>, eat <FoodKind>
         return ("I am " + this.getKind() + ", eat " + this.getFoodKind());
     }
 
-    public double getFoodCoeff() {
+    public double getFoodCoeff() { //возвращает коэффициент веса еды к весу тела животного
         switch (getKind()) {
             default:
                 return 0.02;
         }
     }
 
-    public double calculateFoodWeight() {
+    public double calculateFoodWeight() { // рассчитывает необходимый вес еды, по формуле - вес-еды = вес-животного * коэффициент веса тела.
         return this.getWeight() * this.getFoodCoeff();
     }
 
-    public String toStringFull() {
+    public String toStringFull() { //возвращет информацию о животном в формате: I am <AnimalKind>, eat <FoodKind> <CalculateFoodWeight>
         return ("I am " + this.getKind() + ", eat " + this.getFoodKind() + " " + this.calculateFoodWeight());
     }
 
-    public static void printInfo(Animal animal) {
+    public static void printInfo(Animal animal) { // выводит информацию о типе животного и виде его еды
         System.out.println(animal);
     }
 
