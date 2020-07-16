@@ -57,6 +57,7 @@ public class CyclesGoldenFibo {
                 }
             }
         }
+
         int n0 = 1;
         int n1 = 1;
         int n2;
@@ -67,8 +68,19 @@ public class CyclesGoldenFibo {
             n0=n1;
             n1=n2;
         }
+
         System.out.println();
-        System.out.println(isGoldenTriangle(5,5,5));
-        System.out.println(isGoldenTriangle(55,55,89));
+
+        System.out.println("");
+
+        System.out.println(isGoldenTriangle(3, 3, 2));
+        System.out.println(isGoldenTriangle(3, 3, 2));
+        System.out.println(isGoldenTriangle(5, 5, 3));
+        System.out.println(isGoldenTriangle(8, 8, 5));
+        System.out.println(isGoldenTriangle(21, 13, 13));
+        System.out.println(isGoldenTriangle(21, 21, 13));
+        System.out.println(isGoldenTriangle(21, 21, 34));
+        System.out.println(isGoldenTriangle(55, 89, 55));
+        System.out.println(isGoldenTriangle(89, 89, 55));
     }
 }

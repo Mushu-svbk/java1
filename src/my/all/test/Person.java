@@ -33,5 +33,5 @@ public class Person {
         System.out.println(Samuylova.age);
         System.out.println(Samuylova.country);
         System.out.println(Samuylova.name);
-     }
+    }
 }
