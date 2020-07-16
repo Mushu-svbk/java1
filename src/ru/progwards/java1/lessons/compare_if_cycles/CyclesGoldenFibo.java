@@ -73,7 +73,7 @@ public class CyclesGoldenFibo {
 
         System.out.println("");
 
-        System.out.println(isGoldenTriangle(3, 3, 2));
+        System.out.println(isGoldenTriangle(1, 1, 2));
         System.out.println(isGoldenTriangle(3, 3, 2));
         System.out.println(isGoldenTriangle(5, 5, 3));
         System.out.println(isGoldenTriangle(8, 8, 5));
