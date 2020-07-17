@@ -69,18 +69,18 @@ public class CyclesGoldenFibo {
             n1=n2;
         }
 
-        System.out.println();
-
         System.out.println("");
 
-        System.out.println(isGoldenTriangle(1, 1, 2));
-        System.out.println(isGoldenTriangle(3, 3, 2));
-        System.out.println(isGoldenTriangle(5, 5, 3));
-        System.out.println(isGoldenTriangle(8, 8, 5));
-        System.out.println(isGoldenTriangle(21, 13, 13));
-        System.out.println(isGoldenTriangle(21, 21, 13));
-        System.out.println(isGoldenTriangle(21, 21, 34));
-        System.out.println(isGoldenTriangle(55, 89, 55));
-        System.out.println(isGoldenTriangle(89, 89, 55));
+        for (int a = 1; a <= 100; a++) {
+            for (int b = 1; b <= 100; b++) {
+                if (TriangleInfo.isTriangle(a, b, b) && isGoldenTriangle(a, b, b)) {
+                    System.out.println("Сторона a = " + a + " ");
+                    System.out.println("Сторона b = " + b + " ");
+                    System.out.println("Сторона c = " + b + " " + "\n");
+                }
+//                }
+            }
+        }
+        System.out.println();
     }
 }

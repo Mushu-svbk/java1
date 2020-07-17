@@ -37,9 +37,8 @@ public class Animal {
     }
 
     public double getFoodCoeff() { //возвращает коэффициент веса еды к весу тела животного
-        switch (getKind()) {
-            default:
-                return 0.02;
+        getKind(); {
+            return 0.02;
         }
     }
 

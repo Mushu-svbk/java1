@@ -17,9 +17,8 @@ public class Duck extends Animal{
 
     @Override
     public double getFoodCoeff() { //возвращает коэффициент веса еды к весу тела животного
-        switch (getKind()) {
-            default:
-                return 0.04;
+        getKind(); {
+            return 0.04;
         }
     }
 }

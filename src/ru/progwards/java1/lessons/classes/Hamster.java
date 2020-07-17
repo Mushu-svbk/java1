@@ -17,9 +17,8 @@ public class Hamster extends Animal{
 
     @Override
     public double getFoodCoeff() {//возвращает коэффициент веса еды к весу тела животного
-        switch (getKind()) {
-            default:
-                return 0.03;
+        getKind(); {
+            return 0.03;
         }
     }
 }
