@@ -37,5 +37,8 @@ public class Rectangle {
         System.out.println(rect4.compareTo(rect1));
         System.out.println(rect2.compareTo(rect3));
         System.out.println(rect4.compareTo(rect5));
+        System.out.println(rect4.compareTo2(rect1));
+        System.out.println(rect2.compareTo2(rect3));
+        System.out.println(rect4.compareTo2(rect5));
     }
 }
