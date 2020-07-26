@@ -7,9 +7,10 @@ public class DIntArray {
     private int[] lastArray;
     private int num;
 
-    public int at(int pos) { //возвращает элемент по индексу pos
-        this.num = startArray[pos];
-        return this.num;
+    private int pos;
+
+    DIntArray() {
+        this.startArray = new int[0];
     }
 
     DIntArray(int[] x) { //конструктор - по умолчанию
@@ -35,6 +36,12 @@ public class DIntArray {
         System.arraycopy(startArray, 0, lastArray, 0, pos);
         System.arraycopy(startArray, pos, lastArray, pos - 1, startArray.length - pos);
         startArray = lastArray;
+    }
+
+
+    public int at(int pos) { //возвращает элемент по индексу pos
+        this.num = startArray[pos];
+        return this.num;
     }
 
     public static void main(String[] args) {

@@ -39,9 +39,9 @@ public class Eratosthenes { //массив чисел, собственно, "р
     public boolean isSimple(int n) { //метод, который возвращает sieve[n], что бы можно было узнать, простое число n или составное
         int max = n * n;
         for (int i = 3; i <= max; i += 2) {
-            if (n % i == 0) return false;
+            if (n % i == 0) return true;
         }
-        return true;
+        return false;
     }
 
     @Override
