@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class Eratosthenes { //массив чисел, собственно, "решето"
     private boolean[] sieve;
     int n;
-    int N;
 
     public Eratosthenes(boolean[] sieve, int n) {
         this.sieve = sieve;
@@ -37,23 +36,24 @@ public class Eratosthenes { //массив чисел, собственно, "р
     }
 
     public boolean isSimple(int n) { //метод, который возвращает sieve[n], что бы можно было узнать, простое число n или составное
+        if (n % 2 == 0 && n != 2) return false;
         int max = n * n;
         for (int i = 3; i <= max; i += 2) {
-            if (n % i == 0) return true;
+            if (n % i == 0) return false;
         }
-        return false;
+        return true;
     }
 
     @Override
     public String toString() {
-        return "Решето Эратосфена{" + N + "}";
+        return "Решето Эратосфена{" + n + "}";
     }
 
     public static void main(String[] args) {
         Eratosthenes era = new Eratosthenes(25);
         System.out.println("N = " + era + ", sieve = " + Arrays.toString(era.sieve));
-        System.out.println(era.N);
-        System.out.println(era.isSimple(6));
+        System.out.println(era.n);
+        System.out.println(era.isSimple(2));
         System.out.println(era.isSimple(4));
         System.out.println(era.isSimple(30));
     }
