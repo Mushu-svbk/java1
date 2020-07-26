@@ -10,7 +10,6 @@ public class Eratosthenes { //массив чисел, собственно, "р
     public Eratosthenes(boolean[] sieve, int n) {
         this.sieve = sieve;
         this.n = n;
-        this.N = N;
     }
 
     public Eratosthenes(int N) { //конструктор, который должен разместить массив sieve с размером в N и заполнить его значениями true, после чего вызвать метод sift()
@@ -47,15 +46,15 @@ public class Eratosthenes { //массив чисел, собственно, "р
 
     @Override
     public String toString() {
-        return "Eratosthenes{" +
-                "N=" + N +
-                '}';
+        return "Решето Эратосфена{" + N + "}";
     }
 
     public static void main(String[] args) {
         Eratosthenes era = new Eratosthenes(25);
-        System.out.println("N= " + era + ", sieve = " + Arrays.toString(era.sieve));
+        System.out.println("N = " + era + ", sieve = " + Arrays.toString(era.sieve));
         System.out.println(era.N);
+        System.out.println(era.isSimple(6));
         System.out.println(era.isSimple(4));
+        System.out.println(era.isSimple(30));
     }
 }
