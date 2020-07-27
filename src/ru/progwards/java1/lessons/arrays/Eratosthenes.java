@@ -54,5 +54,6 @@ public class Eratosthenes { //массив чисел, собственно, "р
         System.out.println("4 " + era.isSimple(4));
         System.out.println("9 " + era.isSimple(9));
         System.out.println("3 " + era.isSimple(3));
+        System.out.println("7 " + era.isSimple(7));
     }
 }
