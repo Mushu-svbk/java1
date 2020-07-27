@@ -45,7 +45,7 @@ public class DIntArray {
     }
 
     public static void main(String[] args) {
-        int[] x = {2, -7, 12, 24, 67, 52, -15, -21, 0, -1};
+        int[] x = {2, -7, 12, 24, 67, 52, -15, -21, 0};
         DIntArray mass = new DIntArray(x);
         mass.atInsert(4, 18);
         System.out.println(Arrays.toString(mass.lastArray));
