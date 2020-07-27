@@ -47,10 +47,10 @@ public class Eratosthenes { //массив чисел, собственно, "р
         Eratosthenes era = new Eratosthenes(25);
         System.out.println("N = " + era + ", sieve = " + Arrays.toString(era.sieve));
         System.out.println(era.n);
-        System.out.println(era.isSimple(2));
-        System.out.println(era.isSimple(4));
-        System.out.println(era.isSimple(30));
-        System.out.println(era.isSimple(9));
-        System.out.println(era.isSimple(3));
+        System.out.println("2" + era.isSimple(2));
+        System.out.println("4" + era.isSimple(4));
+        System.out.println("30" + era.isSimple(30));
+        System.out.println("9" + era.isSimple(9));
+        System.out.println("3" + era.isSimple(3));
     }
 }
