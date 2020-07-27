@@ -34,10 +34,8 @@ public class Eratosthenes { //массив чисел, собственно, "р
     }
 
     public boolean isSimple(int n) { //метод, который возвращает sieve[n], что бы можно было узнать, простое число n или составное
-        final boolean s;
         if (n % 2 == 0 && n != 2) return false;
-        int maxDiv = (int) Math.sqrt(n);
-        for (int i = 3; i <= maxDiv; i += 2) {
+        for (int i = 3; i * i <= n; i += 2) {
             if (n % i == 0) return false;
         }
         return true;
