@@ -35,7 +35,7 @@ public class Eratosthenes { //массив чисел, собственно, "р
         if (n % 2 == 0 && n != 2) return false;
         int max = n * n;
         for (int i = 3; i <= max; i += 2) {
-            if (n % i == 0) return false;
+            if (n % i == 0) return true;
         }
         return true;
     }
