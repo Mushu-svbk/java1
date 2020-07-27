@@ -32,12 +32,10 @@ public class Eratosthenes { //массив чисел, собственно, "р
     }
 
     public boolean isSimple(int n) { //метод, который возвращает sieve[n], что бы можно было узнать, простое число n или составное
-        if (n % 2 == 0 && n != 2) return false;
-        int max = n * n;
-        for (int i = 3; i <= max; i += 2) {
-            if (n % i == 0) return true;
-        }
-        return true;
+        final boolean s;
+        if (sieve[n]) s = true;
+        else s = false;
+        return s;
     }
 
     @Override
@@ -52,5 +50,7 @@ public class Eratosthenes { //массив чисел, собственно, "р
         System.out.println(era.isSimple(2));
         System.out.println(era.isSimple(4));
         System.out.println(era.isSimple(30));
+        System.out.println(era.isSimple(9));
+        System.out.println(era.isSimple(3));
     }
 }
