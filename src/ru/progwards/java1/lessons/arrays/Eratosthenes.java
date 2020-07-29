@@ -14,6 +14,7 @@ public class Eratosthenes { //массив чисел, собственно, "р
     public Eratosthenes(int N) { //конструктор, который должен разместить массив sieve с размером в N и заполнить его значениями true, после чего вызвать метод sift()
         sieve = new boolean[N + 1];
         Arrays.fill(sieve, true);
+
         sift();
     }
 
@@ -21,6 +22,7 @@ public class Eratosthenes { //массив чисел, собственно, "р
         for (int i = 0; i < sieve.length; i++) {
             sieve[i] = true;
         }
+        
         for (int j = 2; j * j <= sieve.length; j++) {
             if (sieve[j]) {
                 for (int i = j * j; i <= sieve.length; i+= j) {

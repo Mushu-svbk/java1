@@ -24,7 +24,9 @@ public class ArraySort {
     public static void main(String[] args) {
         int[] a = {-81, 25, 15, -32, 31, -88, 0, -95, -2, 104, -4, 11, 9, -17};
         System.out.println("Массив до сортировки " + Arrays.toString(a));
+
         System.out.println("");
+
         sort(a);
         System.out.println("Массив после сортировки " + Arrays.toString(a));
 
