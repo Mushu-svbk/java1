@@ -6,11 +6,6 @@ public class Eratosthenes { //массив чисел, собственно, "р
     private boolean[] sieve;
     int n;
 
-    public Eratosthenes(boolean[] sieve, int n) {
-        this.sieve = sieve;
-        this.n = n;
-    }
-
     public Eratosthenes(int N) { //конструктор, который должен разместить массив sieve с размером в N и заполнить его значениями true, после чего вызвать метод sift()
         sieve = new boolean[N + 1];
         Arrays.fill(sieve, true);
@@ -19,11 +14,17 @@ public class Eratosthenes { //массив чисел, собственно, "р
     }
 
     private void sift() { //метод который, собственно и реализует алгоритм Эратосфена, просеивая составные числа. Подсказка - нужно реализовать 2 вложенных цикла, внешний, например по i от 2 до N-1, и внутренний, например по j который будет просеивать числа, кратные переменной внешнего цикла i*j.
+        int i, j;
+        for (i = 2; i < sieve.length; i++) {
+            for (j = 2; j < sieve.length; j++) {
+                if (i * j <= 3) {
+                    sieve[i * j] = true;
+                    continue;
+                }
 
-        for (int j = 2; j * j <= this.n; j++) {
-            if (sieve[j]) {
-                for (int i = j * j; i <= this.n; i += j) {
-                    sieve[i] = false;
+                while ((sieve.length - 1) >= i * j) {
+                    sieve[j * i] = false;
+                    j++;
                 }
             }
         }
