@@ -23,7 +23,7 @@ public class Eratosthenes { //массив чисел, собственно, "р
         for (int j = 2; j * j <= sieve.length; j++) {
             if (sieve[j]) {
                 for (int i = j * j; i <= sieve.length; i+= j) {
-                    sieve[i] = false;
+                    sieve[n] = false;
                 }
             }
         }
