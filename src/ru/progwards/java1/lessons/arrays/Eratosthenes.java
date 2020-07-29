@@ -6,6 +6,11 @@ public class Eratosthenes { //массив чисел, собственно, "р
     private boolean[] sieve;
     int n;
 
+    public Eratosthenes(boolean[] sieve, int n) {
+        this.sieve = sieve;
+        this.n = n;
+    }
+
     public Eratosthenes(int N) { //конструктор, который должен разместить массив sieve с размером в N и заполнить его значениями true, после чего вызвать метод sift()
         sieve = new boolean[N + 1];
         Arrays.fill(sieve, true);
