@@ -6,27 +6,21 @@ public class Eratosthenes { //массив чисел, собственно, "р
     private boolean[] sieve;
     int n;
 
-    public Eratosthenes(boolean[] sieve, int n) {
-        this.sieve = sieve;
-        this.n = n;
-    }
-
     public Eratosthenes(int N) { //конструктор, который должен разместить массив sieve с размером в N и заполнить его значениями true, после чего вызвать метод sift()
         sieve = new boolean[N + 1];
         Arrays.fill(sieve, true);
-
         sift();
     }
 
 
     private void sift() { //метод который, собственно и реализует алгоритм Эратосфена, просеивая составные числа. Подсказка - нужно реализовать 2 вложенных цикла, внешний, например по i от 2 до N-1, и внутренний, например по j который будет просеивать числа, кратные переменной внешнего цикла i*j.
-        for (int i = 0; i < this.n; i++) {
+        for (int i = 0; i < sieve.length; i++) {
             sieve[i] = true;
         }
 
-        for (int j= 2; j * j <= this.n; j++) {
+        for (int j= 2; j * j <= sieve.length; j++) {
             if (sieve[j]) {
-                for (int i = j * j; i <= this.n; i += j) {
+                for (int i = j * j; i <= sieve.length; i += j) {
                     sieve[i] = false;
                 }
             }
@@ -34,11 +28,7 @@ public class Eratosthenes { //массив чисел, собственно, "р
     }
 
     public boolean isSimple(int n) { //метод, который возвращает sieve[n], что бы можно было узнать, простое число n или составное
-        if (n % 2 == 0 && n != 2) return false;
-        for (int i = 3; i * i <= n; i += 2) {
-            if (n % i == 0) return false;
-        }
-        return true;
+        return sieve[n];
     }
 
     @Override
@@ -47,7 +37,7 @@ public class Eratosthenes { //массив чисел, собственно, "р
     }
 
     public static void main(String[] args) {
-        Eratosthenes era = new Eratosthenes(25);
+        Eratosthenes era = new Eratosthenes(28);
         System.out.println("N = " + era + ", sieve = " + Arrays.toString(era.sieve));
         System.out.println(era.n);
         System.out.println("2 " + era.isSimple(2));

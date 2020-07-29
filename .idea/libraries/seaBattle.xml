@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="seaBattle">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../progwards_java_learning/seaBattle" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../progwards_java_learning/seaBattle" recursive="false" />
+  </library>
+</component>
