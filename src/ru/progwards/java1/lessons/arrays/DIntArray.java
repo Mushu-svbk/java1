@@ -5,10 +5,7 @@ import java.util.Arrays;
 public class DIntArray {
     private int[] startArray;
     private int[] lastArray;
-    
     private int num;
-
-    private int pos;
 
     DIntArray() {
         this.startArray = new int[0];
