@@ -48,7 +48,7 @@ public class DIntArray {
         System.out.println(Arrays.toString(mass.lastArray));
         mass.atDelete(4);
         System.out.println(Arrays.toString(mass.startArray));
-        mass.at(8);
+        mass.at(7);
         System.out.println(mass.at(7));
     }
 }
