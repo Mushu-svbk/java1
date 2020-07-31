@@ -5,14 +5,9 @@ import java.util.Arrays;
 public class DIntArray {
     private int[] startArray;
     private int[] lastArray;
-    private int num;
 
-    DIntArray() {
-        this.startArray = new int[0];
-    }
-
-    DIntArray(int[] x) { //конструктор - по умолчанию
-        this.startArray = x;
+    public DIntArray(int[] x) { //конструктор - по умолчанию
+        startArray = x;
     }
     public void add(int num) { //добавляет элемент num в конец массива, при этом размер массива должен увеличиться на 1
         lastArray = new int[startArray.length + 1];
@@ -38,12 +33,11 @@ public class DIntArray {
 
 
     public int at(int pos) { //возвращает элемент по индексу pos
-        this.num = startArray[pos];
-        return this.num;
+        return startArray[pos];
     }
 
     public static void main(String[] args) {
-        int[] x = {2, -7, 12, 24, 67, 52, -15, -21, 0};
+        int[] x = {2, -7, 12, 24, 67, 52, -15, -21};
         DIntArray mass = new DIntArray(x);
         mass.atInsert(4, 18);
         System.out.println(Arrays.toString(mass.lastArray));
