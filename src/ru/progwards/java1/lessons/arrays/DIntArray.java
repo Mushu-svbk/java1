@@ -5,11 +5,6 @@ import java.util.Arrays;
 public class DIntArray {
     private int[] startArray;
     private int[] lastArray;
-    private int num;
-
-    DIntArray() {
-        this.startArray = new int[0];
-    }
 
     DIntArray(int[] x) { //конструктор - по умолчанию
         this.startArray = x;
@@ -38,8 +33,7 @@ public class DIntArray {
 
 
     public int at(int pos) { //возвращает элемент по индексу pos
-        this.num = startArray[pos];
-        return this.num;
+        return startArray[pos];
     }
 
     public static void main(String[] args) {
