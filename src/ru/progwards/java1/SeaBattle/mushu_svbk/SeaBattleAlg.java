@@ -4,7 +4,7 @@ import ru.progwards.java1.SeaBattle.SeaBattle;
 
 import java.util.ArrayList;
 
-public class SeaBattleAlg {
+public class SeaBattleAlg{
     // Тестовое поле создаётся конструктором
     //     SeaBattle seaBattle = new SeaBattle(true);
     //
@@ -41,28 +41,7 @@ public class SeaBattleAlg {
         }
     }
 
-    enum Rotation {
 
-        Up, Right;
-
-        int nextX() {
-            if (this.equals(Right)) {
-                return 1;
-            } else {
-                return 0;
-            }
-        }
-
-        int nextY() {
-            if (this.equals(Up)) {
-                return -1;
-            } else {
-                return 0;
-            }
-        }
-        int addX = 0;
-        int addY = 0;
-    }
 
     
     // функция для отладки
