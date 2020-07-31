@@ -26,11 +26,14 @@ public class Eratosthenes { //массив чисел, собственно, "р
     public boolean isSimple(int n) { //метод, который возвращает sieve[n], что бы можно было узнать, простое число n или составное
         return sieve[n];
     }
-    
+
+    public String toString() {
+        return "Решето Эратосфена{" + sieve.length + "}";
+    }
+
     public static void main(String[] args) {
         Eratosthenes era = new Eratosthenes(15);
         System.out.println("N = " + era + ", sieve = " + Arrays.toString(era.sieve));
-//        System.out.println(era.n);
         System.out.println("2 " + era.isSimple(2));
         System.out.println("4 " + era.isSimple(4));
         System.out.println("9 " + era.isSimple(9));
