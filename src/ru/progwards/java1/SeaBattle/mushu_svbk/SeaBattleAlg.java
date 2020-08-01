@@ -2,8 +2,6 @@ package ru.progwards.java1.SeaBattle.mushu_svbk;
 
 import ru.progwards.java1.SeaBattle.SeaBattle;
 
-import java.util.ArrayList;
-
 public class SeaBattleAlg{
     // Тестовое поле создаётся конструктором
     //     SeaBattle seaBattle = new SeaBattle(true);
@@ -31,12 +29,20 @@ public class SeaBattleAlg{
     //         8|X|.|.|.|.|.|.|X|.|.|
     //         9|X|.|.|.|X|.|.|.|.|.|
 
+    // ' ', '.', '*', 'X'
+    char field[][];
+
     public void battleAlgorithm(SeaBattle seaBattle) {
         // пример алгоритма:
         // стрельба по всем квадратам поля полным перебором
+        int hits = 0;
         for (int y = 0; y < seaBattle.getSizeX(); y++) {
             for (int x = 0; x < seaBattle.getSizeY(); x++) {
                 SeaBattle.FireResult fireResult = seaBattle.fire(x, y);
+                if (fireResult != SeaBattle.FireResult.MISS)
+                    hits++;
+                if(hits >= 20)
+                    return;
             }
         }
     }
