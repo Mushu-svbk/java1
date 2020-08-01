@@ -30,7 +30,7 @@ public class SeaBattleAlg{
     //         9|X|.|.|.|X|.|.|.|.|.|
 
     // ' ', '.', '*', 'X'
-    char field[][];
+    char[][] field;
 
     public void battleAlgorithm(SeaBattle seaBattle) {
         // пример алгоритма:
