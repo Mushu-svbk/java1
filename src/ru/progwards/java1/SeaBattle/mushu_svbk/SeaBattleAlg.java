@@ -1,8 +1,11 @@
 package ru.progwards.java1.SeaBattle.mushu_svbk;
 
 import ru.progwards.java1.SeaBattle.SeaBattle;
+import ru.progwards.java1.SeaBattle.SeaBattle.FireResult;
 
-public class SeaBattleAlg{
+import static ru.progwards.java1.SeaBattle.SeaBattle.FireResult.*;
+
+public class SeaBattleAlg {
     // Тестовое поле создаётся конструктором
     //     SeaBattle seaBattle = new SeaBattle(true);
     //
@@ -29,8 +32,9 @@ public class SeaBattleAlg{
     //         8|X|.|.|.|.|.|.|X|.|.|
     //         9|X|.|.|.|X|.|.|.|.|.|
 
-    // ' ', '.', '*', 'X'
-    char[][] field;
+
+        char[][] field;
+
 
     public void battleAlgorithm(SeaBattle seaBattle) {
         // пример алгоритма:
@@ -38,18 +42,16 @@ public class SeaBattleAlg{
         int hits = 0;
         for (int y = 0; y < seaBattle.getSizeX(); y++) {
             for (int x = 0; x < seaBattle.getSizeY(); x++) {
-                SeaBattle.FireResult fireResult = seaBattle.fire(x, y);
-                if (fireResult != SeaBattle.FireResult.MISS)
+                FireResult fireResult = seaBattle.fire(x, y);
+                if (fireResult != MISS) {
                     hits++;
-                if(hits >= 20)
+                }
+                if(hits >= 20) {
                     return;
+                }
             }
         }
     }
-
-
-
-    
     // функция для отладки
     public static void main(String[] args) {
         System.out.println("Sea battle");
@@ -57,4 +59,5 @@ public class SeaBattleAlg{
         new SeaBattleAlg().battleAlgorithm(seaBattle);
         System.out.println(seaBattle.getResult());
     }
+
 }
