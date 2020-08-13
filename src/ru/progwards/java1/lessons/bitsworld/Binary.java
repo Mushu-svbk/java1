@@ -4,20 +4,19 @@ public class Binary {
     static byte num;
 
     public Binary(byte num) {
-        this.num = num;
-        toString();
+        Binary.num = num;
     }
 
     public String toString() {
         if (num == 0) return "00000000";
-        String value = "";
+        StringBuilder value = new StringBuilder();
         int result = num;
         for (int i = 0; i < 8; i++) {
-            value = (result & 0b1) + value;
+            value.insert(0, (result & 0b1));
             result >>= 1;
 
         }
-        return value;
+        return value.toString();
     }
 
     public static void main(String[] args) {
