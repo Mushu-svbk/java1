@@ -1,4 +1,4 @@
-package my.all.test;
+package ru.progwards.java1.lessons;
 
 public class Task2 {
     public static void printJava () {
