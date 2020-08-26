@@ -5,19 +5,13 @@ import java.util.Arrays;
 public class ArraySort {
 
     public static void sort(int[] a) { //Реализует метод, сортирующий произвольный массив целых чисел путем сравнения двух из них и перестановкой
-        int maxValue, maxIndex;
-        for (int i = a.length - 1; i >= 0; i--) {
-            maxValue = a[i];
-            maxIndex = i;
-            for (int j = 0; j < i; j++) {
-                if (a[j] > maxValue) {
-                    maxValue = a[j];
-                    maxIndex = j;
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[j] > a[i]) {
+                    int tmpValue = a[i];
+                    a[i] = a[j];
+                    a[j] = tmpValue;
                 }
-            }
-            if (maxIndex < i) {
-                a[maxIndex] = a[i];
-                a[i] = maxValue;
             }
         }
     }
