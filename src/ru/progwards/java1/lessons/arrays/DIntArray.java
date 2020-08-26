@@ -11,7 +11,7 @@ public class DIntArray {
         this.startArray = new int[0];
     }
 
-    DIntArray(int[] x) { //конструктор - по умолчанию
+    DIntArray(int[] x) {  //конструктор - по умолчанию
         this.startArray = x;
     }
     public void add(int num) { //добавляет элемент num в конец массива, при этом размер массива должен увеличиться на 1
