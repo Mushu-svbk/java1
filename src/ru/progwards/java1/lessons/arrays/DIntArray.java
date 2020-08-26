@@ -29,7 +29,7 @@ public class DIntArray {
         startArray = lastArray;
     }
 
-    public void atDelete(int pos) { //удаляет элемент в позиции pos массива, при этом размер массива должен уменьшиться на 1
+    public void atDelete(int pos) {  //удаляет элемент в позиции pos массива, при этом размер массива должен уменьшиться на 1
         lastArray = new int[startArray.length - 1];
         System.arraycopy(startArray, 0, lastArray, 0, pos);
         System.arraycopy(startArray, pos, lastArray, pos - 1, startArray.length - pos);
@@ -37,7 +37,7 @@ public class DIntArray {
     }
 
 
-    public int at(int pos) { //возвращает элемент по индексу pos
+    public int at(int pos) {  //возвращает элемент по индексу pos
         this.num = startArray[pos];
         return this.num;
     }
