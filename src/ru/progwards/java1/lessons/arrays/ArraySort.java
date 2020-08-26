@@ -5,10 +5,12 @@ import java.util.Arrays;
 public class ArraySort {
 
     public static void sort(int[] a) { //Реализует метод, сортирующий произвольный массив целых чисел путем сравнения двух из них и перестановкой
+        int tmpValue;
         for (int i = 0; i < a.length; i++) {
+            // найдем в остатках максимальный
             for (int j = i + 1; j < a.length; j++) {
-                if (a[j] > a[i]) {
-                    int tmpValue = a[i];
+                if (a[i] > a[j]) {
+                    tmpValue = a[i];
                     a[i] = a[j];
                     a[j] = tmpValue;
                 }
