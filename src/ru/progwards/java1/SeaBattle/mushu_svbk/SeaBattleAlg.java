@@ -1,7 +1,7 @@
 package ru.progwards.java1.SeaBattle.mushu_svbk;
 
 import ru.progwards.java1.SeaBattle.SeaBattle;
-import ru.progwards.java1.SeaBattle.SeaBattle.FireResult;
+import ru.progwards.java1.SeaBattle.SeaBattle.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
