@@ -23,19 +23,18 @@ public class CalculateFibonacci {
 
     // Fibonacci n number
     public static int fiboNumber(int n) {
-        if (lastFibo.n == n) return lastFibo.fibo;
-        int f1 = 0;
-        int f2 = 1;
-        int t;
-        int i = 1;
-        while (i++ < n) {
-            t = f2;
-            f2 += f1;
-            f1 = t;
+        int i1 = 1;
+        int i2 = 1;
+        int i3 = 0;
+        int count = 3;
+        while (count <= n) {
+            i3 = i1 + i2;
+            i1 = i2;
+            i2 = i3;
+            count++;
         }
-        lastFibo.n = n;
-        lastFibo.fibo = f2;
-        return f2;
+        if (n == 0 | n == 1 | n == 2) i3 = 1;
+        return i3;
     }
 
     CalculateFibonacci() {
