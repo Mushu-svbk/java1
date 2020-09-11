@@ -76,11 +76,15 @@ public class Animal implements FoodCompare, CompareWeight {
     public CompareResult compareWeight(CompareWeight smthHasWeigt) {
         Animal otherAnimal = (Animal) smthHasWeigt;
         int doubcom = Double.compare(this.getWeight(), otherAnimal.getWeight());
-        return switch (doubcom) {
-            case (-1) -> CompareResult.LESS;
-            case (0) -> CompareResult.EQUAL;
-            default -> CompareResult.GREATER;
-        };
+        switch (doubcom) {
+            case (-1):
+                return CompareWeight.CompareResult.LESS;
+            case (0):
+                return CompareWeight.CompareResult.EQUAL;
+
+
+        }
+        return CompareWeight.CompareResult.GREATER;
     }
 
     public static void main(String[] args) {
