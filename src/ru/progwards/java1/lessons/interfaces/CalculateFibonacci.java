@@ -1,61 +1,52 @@
 package ru.progwards.java1.lessons.interfaces;
 
 public class CalculateFibonacci {
-    static CacheInfo lastFibo;
-    static {
-        lastFibo = new CacheInfo();
-    }
+    private static CacheInfo lastFibo;
 
-    static class CacheInfo {
-
-        int n; //число, для которого рассчитываем Фибоначчи
-        int fibo; //результат расчета
-
-        CacheInfo(){
-            n = -1;
-        }
-
-        CacheInfo(int n, int fibo) {
-            this.n = n;
-            this.fibo = fibo;
-        }
-    }
-
-    // Fibonacci n number
     public static int fiboNumber(int n) {
+        if (lastFibo != null && lastFibo.n == n)
+            return lastFibo.fibo;
         int i1 = 1;
         int i2 = 1;
         int i3 = 0;
         int count = 3;
+        if (n == 0 | n == 1 | n == 2) i3 = 1;
         while (count <= n) {
             i3 = i1 + i2;
             i1 = i2;
             i2 = i3;
             count++;
         }
-        if (n == 0 | n == 1 | n == 2) i3 = 1;
+        lastFibo = new CacheInfo();
         return i3;
     }
 
-    CalculateFibonacci() {
-        lastFibo = new CacheInfo();
+    public static class CacheInfo {
+
+        public int n;
+        public int fibo;
+
+        public CacheInfo() {
+            this.n = n;
+            this.fibo = fibo;
+        }
+
+
     }
 
     public static CacheInfo getLastFibo() {
         return lastFibo;
     }
 
-    public static boolean clearLastFibo() {
+    public static void clearLastFibo() {
         lastFibo = null;
-        return false;
     }
-
     public static void main(String[] args) {
         System.out.println(fiboNumber(11));
         System.out.println(lastFibo.fibo);
         System.out.println(lastFibo.n);
-        System.out.println(clearLastFibo());
+        getLastFibo();
+        clearLastFibo();
         System.out.println(new CacheInfo().fibo);
-
     }
 }
