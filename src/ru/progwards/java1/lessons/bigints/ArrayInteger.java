@@ -32,44 +32,44 @@ public class ArrayInteger {
         return new BigInteger(str.toString());
     }
 
-    boolean add2(ArrayInteger num) {
-        int count = 0;
-        if (digits.length < num.digits.length) {
-            fromInt(new BigInteger("0"));
-            return false;
-        } else if (digits.length == num.digits.length) {
-            for (int i = this.digits.length - 1; i >= 0; i--) {
-                this.digits[i] = (byte) (this.digits[i] + num.digits[i]);
-                if (this.digits[i] >= 10) {
-                    if (i == 0) {
-                        fromInt(new BigInteger("0"));
-                        return false;
-                    }
-
-                    this.digits[i] -= 10;
-                    this.digits[i - 1] += 1;
-                }
-            }
-        } else {
-            for (int i = this.digits.length - 1; i >= 0; i--) {
-                this.digits[i] += num.digits[num.digits.length - 1 - count];
-                count++;
-                if (this.digits[i] >= 10) {
-                    if (i == 0) {
-                        fromInt(new BigInteger("0"));
-                        return false;
-                    }
-
-                    this.digits[i] -= 10;
-                    this.digits[i - 1] += 1;
-                }
-            }
-        }
-        return true;
-    }
+//    boolean add2(ArrayInteger num) {
+//        int count = 0;
+//        if (digits.length < num.digits.length) {
+//            fromInt(new BigInteger("0"));
+//            return false;
+//        } else if (digits.length == num.digits.length) {
+//            for (int i = this.digits.length - 1; i >= 0; i--) {
+//                this.digits[i] = (byte) (this.digits[i] + num.digits[i]);
+//                if (this.digits[i] >= 10) {
+//                    if (i == 0) {
+//                        fromInt(new BigInteger("0"));
+//                        return false;
+//                    }
+//
+//                    this.digits[i] -= 10;
+//                    this.digits[i - 1] += 1;
+//                }
+//            }
+//        } else {
+//            for (int i = this.digits.length - 1; i >= 0; i--) {
+//                this.digits[i] += num.digits[num.digits.length - 1 - count];
+//                count++;
+//                if (this.digits[i] >= 10) {
+//                    if (i == 0) {
+//                        fromInt(new BigInteger("0"));
+//                        return false;
+//                    }
+//
+//                    this.digits[i] -= 10;
+//                    this.digits[i - 1] += 1;
+//                }
+//            }
+//        }
+//        return true;
+//    }
 
     boolean add(ArrayInteger num) {
-        int sigMax = num.signif >= signif ? num.signif : signif; // max significant
+        int sigMax = Math.max(num.signif, signif); // max significant
         int l = digits.length;
         int ln = num.digits.length;
         int p = 0; // перенос
