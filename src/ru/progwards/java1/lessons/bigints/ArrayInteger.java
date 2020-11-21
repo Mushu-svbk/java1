@@ -39,12 +39,12 @@ public class ArrayInteger {
     void fromInt(BigDecimal value) {
         fromString(value.toString());
     }
-    BigInteger toInt() {
+    BigDecimal toInt() {
         char[] s = new char[infos];
         for (int i = infos - 1, k = 0; i >= 0; i--, k++) {
             s[i] = (char)((digits[k] + '0') & 0xFF);
         }
-        return new BigInteger(String.valueOf(s));
+        return new BigDecimal(s);
     }
 
     boolean raiseCalcError(){
