@@ -1,94 +1,88 @@
 package ru.progwards.java1.lessons.bigints;
-
-import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Arrays;
 
 public class ArrayInteger {
-    byte[] digits; // массив цифр от 0 до 9
-    int infos; // сколько цифр в даное время значимых
+    byte[] digits;
 
-    ArrayInteger() {
-        int n = 10;
-        digits = new byte[n];
-        clear(n);
+    ArrayInteger(int n) {
+        this.digits = new byte[n];
     }
 
-    ArrayInteger(String value) {
-        this();
-        fromString(value);
-    }
-
-    private void clear(int count) {
-        for (int i = 0; i < count; i++) digits[i] = 0;
-        infos = 0;
-    }
-
-    void fromString(String value) {
-        char[] s = value.toCharArray();
-        int sig = s.length;
-        // переведем массив к числовому
-        for (int i = sig - 1, k = 0; i >= 0; i--, k++) {
-            digits[k] = (byte) (s[i] - '0');
+        void fromInt(BigInteger value) {
+        int volume = 0;
+        String starr = value.toString(10);
+        for (int i = 0; i < starr.length(); i++) {
+            String swap = starr.substring(i, i + 1);
+            digits[i] = Byte.parseByte(swap);
+            volume += 1;
         }
-        // обнулим ранее использовавшиеся
-        for (int i = sig; i < infos; i++) {
-            digits[i] = 0;
-        }
-        infos = sig;
-    }
-    void fromInt(BigDecimal value) {
-        fromString(value.toString());
-    }
-    BigDecimal toInt() {
-        char[] s = new char[infos];
-        for (int i = infos - 1, k = 0; i >= 0; i--, k++) {
-            s[i] = (char)((digits[k] + '0') & 0xFF);
-        }
-        return new BigDecimal(s);
+        digits = Arrays.copyOf(digits, volume);
+
     }
 
-    boolean raiseCalcError(){
-        clear(digits.length);
-        return false;
+    BigInteger toInt() {
+        StringBuilder str = new StringBuilder();
+
+        for (byte digit : digits) {
+            str.insert(0, digit);
+        }
+
+        return new BigInteger(str.toString());
     }
+
     boolean add(ArrayInteger num) {
-        int sigMax = Math.max(num.infos, infos); // max
-        int l = digits.length;
-        int ln = num.digits.length;
-        int p = 0; // перенос
-        int r; // результат для цифр
-        int sig = 0; // ИНДЕКС последнего значащего
-        for (int i = 0; i <= sigMax; i++) {
-            r = p;
-            if (i < l) r += digits[i];
-            if (i < ln) r += num.digits[i];
-            if (r > 0) {
-                sig = i;
-                if (sig >= l) return raiseCalcError();
-                digits[sig] = (byte) (r % 10);
-            } else {
-                if (i < l) digits[i] = 0;
+        int count = 0;
+        if (digits.length < num.digits.length) {
+            fromInt(new BigInteger("0"));
+            return false;
+        } else if (digits.length == num.digits.length) {
+            for (int i = this.digits.length - 1; i >= 0; i--) {
+                this.digits[i] = (byte) (this.digits[i] + num.digits[i]);
+                if (this.digits[i] >= 10) {
+                    if (i == 0) {
+                        fromInt(new BigInteger("0"));
+                        return false;
+                    }
+
+                    this.digits[i] -= 10;
+                    this.digits[i - 1] += 1;
+                }
             }
-            p = r / 10;
+        } else {
+            for (int i = this.digits.length - 1; i >= 0; i--) {
+                this.digits[i] += num.digits[num.digits.length - 1 - count];
+                count++;
+                if (this.digits[i] >= 10) {
+                    if (i == 0) {
+                        fromInt(new BigInteger("0"));
+                        return false;
+                    }
+
+                    this.digits[i] -= 10;
+                    this.digits[i - 1] += 1;
+                }
+            }
         }
-        infos = sig + 1;
         return true;
     }
 
     @Override
     public String toString() {
-        byte[] r = new byte [infos];
-        for (int i = infos - 1, k = 0; i >= 0; i--, k++) {
-            r[k] = (byte) (digits[i] + '0');
-        }
-        return new String(r);
+        return "ArrayInteger{" +
+                "digits=" + Arrays.toString(digits) +
+                '}';
     }
 
     public static void main(String[] args) {
-        ArrayInteger a = new ArrayInteger("555");
-        ArrayInteger b = new ArrayInteger("11");
-        System.out.print(a + " + " + b + " = ");
-        a.add(b);
-        System.out.println(a);
+        ArrayInteger arr1 = new ArrayInteger(12);
+        ArrayInteger arr2 = new ArrayInteger(18);
+//        System.out.println(Arrays.toString(arr1.digits));
+        arr1.fromInt(new BigInteger("15001"));
+        System.out.println(Arrays.toString(arr1.digits));
+        arr2.fromInt(new BigInteger("333578"));
+        System.out.println(Arrays.toString(arr2.digits));
+        System.out.println(arr1.add(arr2));
+        System.out.println(arr1.toString());
     }
 }
