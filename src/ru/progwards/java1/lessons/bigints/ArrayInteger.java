@@ -51,7 +51,7 @@ public class ArrayInteger {
             }
         } else {
             for (int i = this.digits.length - 1; i >= 0; i--) {
-                this.digits[i] += num.digits[num.digits.length - 1 - count];
+                this.digits[i] += num.digits[1 - num.digits.length - count];
                 count++;
                 if (this.digits[i] >= 10) {
                     if (i == 0) {
