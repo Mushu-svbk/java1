@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class ArrayInteger {
     byte[] digits;
+    int signif;
 
     ArrayInteger(int n) {
         this.digits = new byte[n];
@@ -31,7 +32,7 @@ public class ArrayInteger {
         return new BigInteger(str.toString());
     }
 
-    boolean add(ArrayInteger num) {
+    boolean add2(ArrayInteger num) {
         int count = 0;
         if (digits.length < num.digits.length) {
             fromInt(new BigInteger("0"));
@@ -64,6 +65,30 @@ public class ArrayInteger {
                 }
             }
         }
+        return true;
+    }
+
+    boolean add(ArrayInteger num) {
+        int sigMax = num.signif >= signif ? num.signif : signif; // max significant
+        int l = digits.length;
+        int ln = num.digits.length;
+        int p = 0; // перенос
+        int r; // результат для цифр
+        int sig = 0; // ИНДЕКС последнего значащего
+        for (int i = 0; i <= sigMax; i++) {
+            r = p;
+            if (i < l) r += digits[i];
+            if (i < ln) r += num.digits[i];
+            if (r > 0) {
+                sig = i;
+                if (sig >= l) return false;
+                digits[sig] = (byte) (r % 10);
+            } else {
+                if (i < l) digits[i] = 0;
+            }
+            p = r / 10;
+        }
+        signif = sig + 1;
         return true;
     }
 
