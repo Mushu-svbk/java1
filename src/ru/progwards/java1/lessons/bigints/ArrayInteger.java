@@ -22,7 +22,7 @@ public class ArrayInteger {
 
     }
 
-    BigInteger toInt() {
+    BigInteger toInt(BigInteger bigInteger) {
         StringBuilder str = new StringBuilder();
 
         for (byte digit : digits) {
@@ -109,5 +109,6 @@ public class ArrayInteger {
         System.out.println(Arrays.toString(arr2.digits));
         System.out.println(arr1.add(arr2));
         System.out.println(arr1.toString());
+        arr1.toInt(new BigInteger("15001"));
     }
 }
