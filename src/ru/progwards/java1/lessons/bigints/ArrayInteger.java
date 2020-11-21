@@ -17,13 +17,12 @@ public class ArrayInteger {
         this();
         fromString(value);
     }
-    private void clear() {
-        clear(infos);
-    }
+
     private void clear(int count) {
         for (int i = 0; i < count; i++) digits[i] = 0;
         infos = 0;
     }
+
     void fromString(String value) {
         char[] s = value.toCharArray();
         int sig = s.length;
@@ -53,7 +52,7 @@ public class ArrayInteger {
         return false;
     }
     boolean add(ArrayInteger num) {
-        int sigMax = num.infos >= infos ? num.infos : infos; // max
+        int sigMax = Math.max(num.infos, infos); // max
         int l = digits.length;
         int ln = num.digits.length;
         int p = 0; // перенос
