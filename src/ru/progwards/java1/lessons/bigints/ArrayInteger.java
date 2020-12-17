@@ -102,7 +102,6 @@ public class ArrayInteger {
     public static void main(String[] args) {
         ArrayInteger arr1 = new ArrayInteger(12);
         ArrayInteger arr2 = new ArrayInteger(18);
-//        System.out.println(Arrays.toString(arr1.digits));
         arr1.fromInt(new BigInteger("15001"));
         System.out.println(Arrays.toString(arr1.digits));
         arr2.fromInt(new BigInteger("333578"));
