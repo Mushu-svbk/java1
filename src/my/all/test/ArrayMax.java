@@ -9,7 +9,7 @@ public class ArrayMax {
         return a[a.length-1];
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args){
         int[] a = new int[]{10, 11, 88, 2, 12, 120};
         System.out.println("Maximum Value is: "+ arrayMax(a));
 

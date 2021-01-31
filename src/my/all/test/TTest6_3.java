@@ -27,5 +27,7 @@ public class TTest6_3 {
         Arrays.sort(a);
         System.out.println("Массив после сортировки: " + Arrays.toString(a));
         System.out.println(arrayMax(a));
+        System.out.print("289468 + 56624 + 88464 = ");
+        System.out.println(289468 + 56624 + 88464);
     }
 }
