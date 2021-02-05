@@ -79,10 +79,15 @@ public class Censor {
     }
 
     public static void main(String[] args) throws IOException {
-        FileWriter fileWriter;
-        fileWriter = new FileWriter("Censor.txt");
-        fileWriter.write("Java — строго типизированный объектно-ориентированный язык программирования, разработанный компанией Sun Microsystems (в последующем приобретённой компанией Oracle).");
-        censorFile("Censor.txt", new String[]{"java", "Oracle", "Sun", "Microsystems"});
-                fileWriter.close();
+        new Censor();
+        censorFile("Censor.txt", new String[]{"Java", "Oracle", "Sun", "Microsystems"});
+
+        FileReader reader = new FileReader("Censor.txt");
+        Scanner scanner = new Scanner(reader);
+        while (scanner.hasNextLine()){
+            String strFromFile = scanner.nextLine();
+            System.out.println(strFromFile);
+        }
+        reader.close();
     }
 }
