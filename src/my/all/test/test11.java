@@ -56,7 +56,7 @@ public class test11 {
 
     public static void main(String[] args) throws IOException {
         try {
-            doExceptions(0);
+            doExceptions(1);
         } catch (Throwable e) {
             System.out.println(e.getMessage());
             for (Throwable t: e.getSuppressed())

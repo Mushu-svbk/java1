@@ -22,14 +22,14 @@ public class TriangleSimpleInfo {
             return b;
         else if ((c <= a && c <= b))
             return c;
-        else if (a == b && a == c)
+        else if ((a == b && a == c))
             return a;
         else
             return 0;
     }
 
     public static boolean isEquilateralTriangle(int a, int b, int c) { // возвращает true, если треугольник равносторонний и false в противном случае.
-        if (a == b && a == c)
+        if ((a == b && a == c))
             return true;
         else
             return false;
