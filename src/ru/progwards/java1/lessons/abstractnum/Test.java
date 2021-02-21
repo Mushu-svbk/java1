@@ -20,8 +20,8 @@ public class Test {
 
         Figure3D fig6 = new Pyramid(number1); // Объем пирамиды в целых числах, со стороной 34
         Figure3D fig7 = new Pyramid(new DoubleNumber(34.0));// Объем пирамиды в double, со стороной 34
-        System.out.println("Объем пирамиды в целых числах, со стороной 34 = " + fig7.volume());
-        System.out.println("Объем пирамиды в double, со стороной 3.0 = " + fig6.volume());
+        System.out.println("Объем пирамиды в целых числах, со стороной 34 = " + fig6.volume());
+        System.out.println("Объем пирамиды в double, со стороной 34.0 = " + fig7.volume());
     }
 
     static void print (Number number) {

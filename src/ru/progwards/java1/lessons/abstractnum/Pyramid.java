@@ -14,11 +14,4 @@ public class Pyramid extends Figure3D {
         this.segment = segment.mul(segment.mul(segment));
         return this.segment.div(segment.newNumber("3"));
     }
-
-    @Override
-    public String toString() {
-        return "Пирамида{" +
-                "отрезок = " + segment +
-                '}';
-    }
 }
