@@ -13,6 +13,15 @@ public class Test {
         Figure3D fig4 = new Pyramid(new DoubleNumber(3.0));// Объем пирамиды в double, со стороной 3
         System.out.println("Объем пирамиды в целых числах, со стороной 3 = " + fig2.volume());
         System.out.println("Объем пирамиды в double, со стороной 3.0 = " + fig4.volume());
+
+        Number number1 = new IntNumber(34); //Объем куба в целых числах, со стороной 34
+        Figure3D fig5 = new Cube(number1);
+        System.out.println("Объем куба в целых числах, со стороной 34 = " + fig5.volume());
+
+        Figure3D fig6 = new Pyramid(number1); // Объем пирамиды в целых числах, со стороной 34
+        Figure3D fig7 = new Pyramid(new DoubleNumber(34.0));// Объем пирамиды в double, со стороной 34
+        System.out.println("Объем пирамиды в целых числах, со стороной 34 = " + fig7.volume());
+        System.out.println("Объем пирамиды в double, со стороной 3.0 = " + fig6.volume());
     }
 
     static void print (Number number) {
