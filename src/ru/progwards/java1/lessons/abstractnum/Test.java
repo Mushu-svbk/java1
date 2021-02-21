@@ -12,7 +12,7 @@ public class Test {
         Figure3D fig2 = new Pyramid(number); // Объем пирамиды в целых числах, со стороной 3
         Figure3D fig4 = new Pyramid(new DoubleNumber(3.0));// Объем пирамиды в double, со стороной 3
         System.out.println("Объем пирамиды в целых числах, со стороной 3 = " + fig2.volume());
-        System.out.println("Объем пирамиды в double, со стороной 3 = " + fig4.volume());
+        System.out.println("Объем пирамиды в double, со стороной 3.0 = " + fig4.volume());
     }
 
     static void print (Number number) {
