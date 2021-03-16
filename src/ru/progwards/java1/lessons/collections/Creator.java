@@ -2,6 +2,7 @@ package ru.progwards.java1.lessons.collections;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Creator {
 
@@ -19,16 +20,18 @@ public class Creator {
         return result;
     }
 
-    public static Collection<Integer> fill3(int n) { //создать коллекцию и заполнить ее тройками чисел. Каждая тройка создается по алгоритму: первое число тройки - индекс числа в коллекции, второе - индекс в квадрате, третье - индекс в кубе, количество элементов в коллекции n*3
-        Collection<Integer> result = new ArrayList<>();
-        int i2;
+    public static Collection<Integer> fill3(int n) {  //создать коллекцию и заполнить ее тройками чисел. Каждая тройка создается по алгоритму:
+
+        List<Integer> list= new ArrayList<>(n * 3);
+        int i2=0;
         for (int i = 0; i < n; i++) {
-            result.add(i);
-            i2 = i * i;
-            result.add(i2);
-            result.add(i2 * i);
+            list.add(i2);
+            list.add((int) Math.pow(i2,2));
+            list.add(i2*i2*i2);
+            i2+=3;
+
         }
-        return result;
+        return list;
     }
 
     public static void main(String[] args) {
