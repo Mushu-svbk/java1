@@ -30,7 +30,7 @@ public class Finder {
 
         Collection<Integer> result = new ArrayList<>();
         if (minIdx >= 1) result.add(minIdx - 1);
-        if (minIdx >= 0) result.add(minIdx);
+        result.add(minIdx);
         return result;
     }
 
@@ -64,8 +64,8 @@ public class Finder {
         int i = 1;
         int num;
 
-        for (Iterator<Integer> iterator = numbers.iterator(); iterator.hasNext(); ) {
-            num = iterator.next();
+        for (Integer number : numbers) {
+            num = number;
             if (num < 1 || num > size) {
                 return false;
             }
@@ -73,10 +73,9 @@ public class Finder {
             i++;
         }
 
-        for (i = 1; i <= size; i++) {
-            if (s.get(i)) continue;
-            else return false;
-        }
+        for (i = 1; i <= size; i++)
+            if (s.get(i)) {
+            } else return false;
 
         return true;
     }
@@ -89,9 +88,7 @@ public class Finder {
         int maxCount = 0;
         String curString = "";
         int curCount = 0;
-        Iterator i = names.iterator();
-        while (i.hasNext()) {
-            String s = (String) i.next();
+        for (String s : names) {
             if (s.compareTo(curString) == 0) {
                 curCount++;
             } else {

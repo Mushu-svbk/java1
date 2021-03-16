@@ -1,12 +1,9 @@
 package ru.progwards.java1.lessons.collections;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class ArrayIterator<T> implements Iterator<T> {
-    private T[] array;
+    private final T[] array;
     private int pos = 0;
 
     ArrayIterator(T[] array) {
@@ -29,8 +26,8 @@ public class ArrayIterator<T> implements Iterator<T> {
     }
 
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<Integer>();
-        for (Integer e : new Integer[]{90, 300, 12, 6, 3, 9, 21}) list.add(e);
+        List<Integer> list = new ArrayList<>();
+        Collections.addAll(list, 90, 300, 12, 6, 3, 9, 21);
         list.iterator();
         System.out.println(list);
     }
