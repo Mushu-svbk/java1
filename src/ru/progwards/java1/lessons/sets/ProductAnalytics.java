@@ -1,43 +1,41 @@
 package ru.progwards.java1.lessons.sets;
-
 import java.util.*;
-
 import static java.lang.System.*;
 
+
+class Product {
+    private final String code; //уникальный артикул товара
+
+    public Product(String code) {
+        this.code = code;
+    }
+
+    @Override
+    public String toString() {
+        return code;
+    }
+}
+
+class Shop {
+    @Override
+    public String toString() {
+        return "Магазин { " +
+                "продукты = " + products +
+                '}';
+    }
+
+    private final List<Product> products; //товары имеющиеся в магазине
+
+    public Shop(List<Product> products) {
+        this.products = products;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+}
+
 public class ProductAnalytics {
-    static class Product {
-        private final String code; //уникальный артикул товара
-
-        public Product(String code) {
-            this.code = code;
-        }
-
-        @Override
-        public String toString() {
-            return code;
-        }
-    }
-
-    static class Shop {
-        @Override
-        public String toString() {
-            return "Магазин { " +
-                    "продукты = " + products +
-                    '}';
-        }
-
-        private final List<Product> products; //товары имеющиеся в магазине
-
-        public Shop(List<Product> products) {
-            this.products = products;
-        }
-
-        public List<Product> getProducts() {
-            return products;
-        }
-    }
-
-
     private static List<Shop> shops = null; //список магазинов
     private static List<Product> allProducts = null; //список всех товаров
 
