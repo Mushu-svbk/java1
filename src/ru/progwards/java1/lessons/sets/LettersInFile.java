@@ -7,13 +7,12 @@ import java.util.*;
 public class LettersInFile {
 
     public static String process(String fileName) throws IOException {
-
         Set<Character> charSet = new HashSet<>();
         FileReader reader = new FileReader(fileName);
         Scanner scan = new Scanner(reader);
         while (scan.hasNextLine()) {
-            String str = scan.nextLine();
-            str.toCharArray();
+            String str;
+            str = scan.nextLine();
             char[] charArray = str.toCharArray();
             for (char doChar : charArray) {
                 if (Character.isLetter(doChar)) charSet.add(doChar);
