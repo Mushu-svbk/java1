@@ -1,6 +1,6 @@
 package my.all.test;
 
-public class Arrays {
+public class Art {
     public static int sumArrayItems(int[] a) {
         int sum=0;
         for(int i:a) {
@@ -22,4 +22,5 @@ public class Arrays {
         System.out.println("Сумма всех натуральных чисел массива " + sumArrayItems(a));
         System.out.println("Сумма всех натуральных чисел массива " + sumArrayItems2(a));
     }
+
 }
