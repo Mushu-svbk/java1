@@ -4,52 +4,41 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class OrderQueue {
-    static class Order {
-        static int num1 = 1;
-        private final double sum;
-        private final int num;
 
-        public Order(double sum) {
-            this.sum = sum;
-            this.num = num1++;
-        }
+    Comparator<Order> orderComparator = (o1, o2) -> {
 
-        public double getSum() {
-            return sum;
-        }
+        int ord1 = ((int) o1.getSum() - 1) / 10000 + 1;
 
-        public int getNum() {
-            return num;
-        }
+        if (ord1 < 1)
+            ord1 = 1;
+        else if (ord1 > 3)
+            ord1 = 3;
 
-        @Override
-        public String toString() {
-            return sum + "(" + num + ")";
-        }
-    }
-    Comparator<Order> orderComparator = (c1, c2) -> {
-        int m1 = ((int) c1.getSum() - 1) / 10000 + 1;
-        if (m1 < 1) m1 = 1;
-        else if (m1 > 3) m1 = 3;
-        int m2 = ((int) c2.getSum() - 1) / 10000 + 1;
-        if (m2 < 1) m2 = 1;
-        else if (m2 > 3) m2 = 3;
-        if (m1 == m2) return c1.getNum() - c2.getNum();
-        return m2 - m1;
+        int ord2 = ((int) o2.getSum() - 1) / 10000 + 1;
+
+        if (ord2 < 1)
+            ord2 = 1;
+        else if (ord2 > 3)
+            ord2 = 3;
+
+        if (ord1 == ord2)
+            return o1.getNum() - o2.getNum();
+        return ord2 - ord1;
     };
 
-    PriorityQueue<Order> queue = new PriorityQueue<>(16, orderComparator);
+
+    PriorityQueue<Order> priorityQueue = new PriorityQueue<>(20, orderComparator);
 
     public void add(Order order) {
-        queue.add(order);
+        priorityQueue.add(order);
     }
 
     public Order get() {
-        return queue.poll();
+        return priorityQueue.poll();
     }
 
     public Order getNum() {
-        return queue.poll();
+        return priorityQueue.poll();
     }
 
     public static void main(String[] args) {
